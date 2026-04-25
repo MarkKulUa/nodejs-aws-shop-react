@@ -10,14 +10,17 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ignore-path .gitignore --fix src",
-    "prettier": "prettier src --write"
+    "prettier": "prettier src --write",
+    "cdk:install": "npm install --prefix infra",
+    "cdk:bootstrap": "npm run --prefix infra cdk -- bootstrap",
+    "cdk:deploy": "npm run build && npm run --prefix infra deploy",
+    "cdk:destroy": "npm run --prefix infra destroy"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.8.7",
-    "@mui/styles": "^5.8.7",
     "@types/yup": "^0.29.14",
     "axios": "^0.27.2",
     "formik": "^2.2.9",
